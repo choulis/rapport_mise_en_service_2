@@ -1,7 +1,7 @@
 import streamlit as st
 from pandas import DataFrame
 
-def afficher_compresseur_section():
+def afficher_section():
     st.title("Compresseurs")
     nb_compresseur = st.text_input('La centrale contient combien de compresseurs?')
 
@@ -17,5 +17,6 @@ def afficher_compresseur_section():
         )
 
         tableau_compresseurs = st.data_editor(tableau_compresseurs)
+        return tableau_compresseurs
     except:
         st.info("Definir le nombre de compresseurs")
