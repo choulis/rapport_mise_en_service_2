@@ -3,6 +3,8 @@ from datetime import datetime
 import pdfkit
 from rapport.modele import generer_html
 
+config = pdfkit.configuration(wkhtmltopdf="wkhtmltopdf.exe")
+
 def afficher_section(tableau_compresseur):
     st.title("Generer le rapport")
     generer = st.button("Generer")
