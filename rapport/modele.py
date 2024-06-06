@@ -1,6 +1,9 @@
 
 
-def generer_html(tableau):
+from pandas import DataFrame
+
+
+def generer_html(**infos):
     return f"""
             <!DOCTYPE html>
             <html lang="en">
@@ -10,9 +13,9 @@ def generer_html(tableau):
                 <title>Document</title>
             </head>
             <body>
-                <h1>Rapport de mise en service</h1>
+                <h1>{infos['title'].upper()}</h1>
                 <h2>Compresseurs</h2>
-                {tableau.to_html()}
+                {infos['tableau'].to_html()}
             </body>
             </html>
         """

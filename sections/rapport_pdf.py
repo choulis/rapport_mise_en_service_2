@@ -10,9 +10,12 @@ def afficher_section(tableau_compresseur):
     generer = st.button("Generer")
 
     if generer:
-        html = generer_html(tableau_compresseur)
+        html = generer_html(
+            title="Rapport des compresseurs",
+            tableau= tableau_compresseur
+            )
         aujourdhui = datetime.today()
-        nom_fichier = f"Rapport_mise_en_service_compresseurs_{aujourdhui.day}{aujourdhui.month}{aujourdhui.year}.pdf"
+        nom_fichier = f"Rapport_mise_en_service_compresseurs_{aujourdhui.day}-{aujourdhui.month}-{aujourdhui.year}.pdf"
 
         pdfkit.from_string(html, nom_fichier)
 
